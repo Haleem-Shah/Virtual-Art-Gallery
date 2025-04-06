@@ -24,7 +24,7 @@
     z-index: 1002;
     display: none;
 }
-/* Container of art gallery */
+/* Container of virtual art gallery */
 #img-gal-con{
     display: flex;
     justify-content: center;
