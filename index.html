@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual 3d art gallery</title>
+    <link rel="stylesheet" href="Styles.css">
+</head>
+<body>
+    <div id="img-gal-sec" style="--zoomed-img:url(); --zoom-x:0%; --zoom-y:0%;--zoomed-display:none;">
+        <div id="dim-back"></div>
+        <!-- Information popup  -->
+        <div id="ip-container">
+            <div id="info-popup"><img src="" id="ip-img" alt="">
+                <div id="ip-details">
+                    <h1>Art Info.</h1>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem explicabo tempore saepe quo doloribus nobis nulla voluptatibus dolores accusantium sequi.</p>
+                </div>
+                <button type="button" id="ip-close-btn">Close</button>
+            </div>
+        </div>
+        <!-- Navigation buttons -->
+        <button class="nav-btns nxt-btn">&#x2192;</button>
+        <button class="nav-btns pre-btn">&#x2190;</button>
+        <!-- Image gallery starts -->
+        <div id="img-gal-con">
+            <div class="gal-images" style="--position:1;">
+                <img src="./Art-Images/art 1.jpg" alt="gal-img" class="act-img">
+            </div>
+            <div class="gal-images" style="--position:2">
+                <img src="./Art-Images/art 2.jpg" alt="gal-img" class="act-img">
+            </div>
+            <div class="gal-images" style="--position:3">
+                <img src="./Art-Images/art 3.jpg" alt="gal-img" class="act-img">
+            </div>
+            <div class="gal-images" style="--position:4">
+                <img src="./Art-Images/art 4.jpg" alt="gal-img" class="act-img">
+            </div>
+            <div class="gal-images" style="--position:5">
+                <img src="./Art-Images/art 5.jpg" alt="gal-img" class="act-img">
+            </div>
+            <div class="gal-images" style="--position:6">
+                <img src="./Art-Images/art 6.jpg" alt="gal-img" class="act-img">
+            </div>
+            <div class="gal-images" style="--position:7">
+                <img src="./Art-Images/art 7.jpg" alt="gal-img" class="act-img">
+            </div>
+            <div class="gal-images" style="--position:8">
+                <img src="./Art-Images/art 8.jpg" alt="gal-img" class="act-img">
+            </div>
+            <div class="gal-images" style="--position:9">
+                <img src="./Art-Images/art 9.jpg" alt="gal-img" class="act-img">
+            </div>
+            <div class="gal-images" style="--position:10">
+                <img src="./Art-Images/art 10.jpg" alt="gal-img" class="act-img">
+            </div>
+        </div>
+        <!-- Image gallery ends -->
+    </div>
+    <script src="Script.js"></script>
+</body>
+</html>

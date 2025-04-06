@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#img-gal-sec{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    position: relative;
+    overflow-x: hidden;
+    
+}
+#dim-back{
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(119, 119, 119, 0.589);
+    z-index: 1002;
+    display: none;
+}
+/* Container of art gallery */
+#img-gal-con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    transform: rotateX(20deg);
+    position: relative;
+    transition: .2s;
+}
+.gal-images{
+    position: absolute;
+    transform: rotateY(calc(var(--position) * calc(360deg / 10) )) translateZ(400px);  /*Important to have a 3d view*/
+}
+/* Zoom effect  */
+#img-gal-sec::before{
+    content: "";
+    display: var(--zoomed-display);
+    height: 15em;
+    width: 15em;
+    position: absolute;
+    top: 35%;
+    left: 60%;
+    background-image: var(--zoomed-img);
+    background-size: 200%;
+    background-position: var(--zoom-x) var(--zoom-y);
+    background-repeat: no-repeat;
+    z-index: 1000;
+}
+.gal-images img {
+    width: 15em;
+    height: auto;
+}
+/* Navigation buttons */
+.nav-btns{
+    position: absolute; 
+    height: 2em;
+    width: 2em;
+    font-size: 2rem;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .2s;         
+}
+.nav-btns:active{
+    background-color: rgba(255, 255, 255, 0.747);
+    color: black;
+}
+.nav-btns.nxt-btn{
+    right: 1em;
+}
+.nav-btns.pre-btn{
+    left: 1em;
+}
+/* Information popup */
+#ip-container{
+    position: absolute;
+    display: none;
+    z-index: 1003;
+    background-color: rgb(255, 255, 255);
+}
+#info-popup #ip-img{
+    display: block;
+    margin: auto;
+    max-width: 300px;
+    height: auto;
+}
+#ip-details{
+    width: max(20vw, 15vw);
+    margin-top: 1.5em;
+    padding: 1.5em;
+}
+#ip-details h1{
+    line-height: 2;
+}
+#ip-container button{
+    margin:0 0 1em 80%;
+    background-color: inherit;
+    border: none;
+    color: grey;
+    cursor: pointer;
+
+}
+/* Media query for diggerent screen size */
+@media only screen and (max-width:1100px){
+    #img-gal-con{
+        width: 100%;
+        height: 10em;
+        overflow-x: hidden;
+
+    }
+    .gal-images{
+        transform: none;
+        left: 103%;
+        animation: slide 10s linear infinite;
+        animation-delay: calc(10s / 10 * var(--position));
+    }
+    @keyframes slide {
+        0%{
+            left: 103%;
+        }
+        100%{
+            left: -103%;
+        }
+    }
+    .gal-images img{
+        width: 12em;
+        height: auto;
+    }
+   
+    .nav-btns{
+        display: none;
+    }
+    #ip-details{
+        width: 70vw;
+    }
+   
+}
+@media only screen and (max-width:1000px){
+    .gal-images img{
+        width: 8em;
+    }
+}
+@media only screen and (max-width:650px){
+    .gal-images img{
+        width: 4em;
+    }
+}
